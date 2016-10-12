@@ -1,0 +1,12 @@
+debug: true
+
+datasource:
+  db-smpo:
+    url: jdbc:oracle:thin:@smpotest2:1521:gazprom
+    username: smpo
+    password: 1
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    test-on-borrow: true
+    validation-query: SELECT 1 FROM dual
+
+spring.jackson.date-format: yyyy-MM-dd'T'HH:mm:ss

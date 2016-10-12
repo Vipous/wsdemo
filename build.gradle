@@ -23,12 +23,26 @@ targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	flatDir {
+		dirs "${rootDir}/lib"
+	}
 }
 
+bootRun {
+    addResources = true
+}
+springBoot {
+    executable = true
+}
 
 dependencies {
-	compile('org.projectlombok:lombok')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.boot:spring-boot-starter-websocket')
+	compile 'org.projectlombok:lombok'
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.springframework.boot:spring-boot-starter-websocket'
+    compile "org.springframework.boot:spring-boot-starter-jdbc"
+	compile 'com.oracle:ojdbc6:11.2.0.4';
+
+    compile "org.springframework.boot:spring-boot-devtools"
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
